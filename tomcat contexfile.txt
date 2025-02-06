@@ -1,0 +1,7 @@
+<Context antiResourceLocking="false" privileged="true" >
+  <CookieProcessor className="org.apache.tomcat.util.http.Rfc6265CookieProcessor"
+                   sameSiteCookies="strict" />
+  <Valve className="org.apache.catalina.valves.RemoteCIDRValve"
+         allow="127.0.0.1, ::1, 100.126.176.0/20, 100.126.192.0/21, 100.126.200.0/24, 100.81.21.67/32, 100.81.0.0/20, 100.81.16.0/22, 100.77.20.0/22, 100.81.20.0/22, 100.81.246.0/23, 100.81.3.0/24" />
+  <Manager sessionAttributeValueClassNameFilter="java\.lang\.(?:Boolean|Integer|Long|Number|String)|org\.apache\.catalina\.filters\.CsrfPreventionFilter\$LruCache(?:\$1)?|java\.util\.(?:Linked)?HashMap"/>
+</Context>
