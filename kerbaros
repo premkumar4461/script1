@@ -1,0 +1,38 @@
+[18-07 05:29] Prasad, Hari
+etc/ssh/sshd_config
+comment below lines
+#GSSAPIAuthentication yes
+ 
+#GSSAPICleanupCredentials ye
+ 
+#KerberosAuthentication yes
+ 
+#UsePAM yes
+
+and reload sshd service 
+
+/etc/init.d/sshd reload
+
+/etc/openldap/ldap.conf
+ 
+comment below lines  
+ 
+#BASE dc=dswh,dc=ds,dc=adp,dc=com
+ 
+#URI ldap://l3akdc01.s1.networkphoneasp.com/ ldap://l3akdc02.s1.networkphoneasp.com/
+
+ like 2
+[18-07 06:12] Prasad, Hari
+how to stop cfengine
+ 
+cat /etc/cron.d/cfengine
+
+comment below lines
+
+#30 * * * * root /usr/sbin/cfexecd -F
+ 
+for i in cfenvd cfexecd cfservd ;do  /etc/init.d/$i stop ;done
+
+for i in cfenvd cfexecd cfservd ;do  chkconfig $i off ;done
+
+ 1f192_squaredcool 1 like 1
